@@ -18,7 +18,13 @@
     <Grid>
         <Button x:Name="strBtn" Content="Start" HorizontalAlignment="Left" Height="34" Margin="56,32,0,0" VerticalAlignment="Top" Width="128" Click="StrBtn_Click"/>
         <Button x:Name="endBtn" Content="End" HorizontalAlignment="Left" Height="34" Margin="245,32,0,0" VerticalAlignment="Top" Width="140" Click="EndBtn_Click"/>
-        <ComboBox x:Name="cbx" HorizontalAlignment="Left" Height="34" Margin="448,32,0,0" VerticalAlignment="Top" Width="154" ItemsSource="{Binding VideoDevices}" SelectedValue="{Binding CurrentDevice}"/>
+        <ComboBox x:Name="cbx" HorizontalAlignment="Left" Height="34" Margin="448,32,0,0" VerticalAlignment="Top" Width="154" ItemsSource="{Binding VideoDevices}" SelectedValue="{Binding CurrentDevice}">
+            <ComboBox.ItemTemplate>
+                <ItemContainerTemplate>
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                </ItemContainerTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Image x:Name="img" HorizontalAlignment="Left" Height="315" Margin="53,97,0,0" VerticalAlignment="Top" Width="580" Source="{Binding Image}"/>
         <Button x:Name="screenshotsBtn" Content="Screenshots" HorizontalAlignment="Left" Height="34" Margin="645,168,0,0" VerticalAlignment="Top" Width="140" Click="ScreenshotsBtn_Click"/>
         <ComboBox x:Name="cbxCameraType" HorizontalAlignment="Left" Height="34" Margin="645,32,0,0" VerticalAlignment="Top" Width="140" ItemsSource="{Binding Source={StaticResource dataFromEnum}}" SelectedValue="{Binding Camera}"/>
