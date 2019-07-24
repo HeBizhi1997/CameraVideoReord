@@ -164,8 +164,10 @@ namespace CameraVideoRecord
                 }
                 else
                 {
-                    if (VideoDevices.Count <= 0)
+                    if (Camera == CameraSource.LocalCamera && VideoDevices.Count <= 0)
+                    {
                         return;
+                    }
                     //等待摄像头准备完毕
                     while (Image == null)
                     {
